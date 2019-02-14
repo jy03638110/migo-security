@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo build
+        echo bulid
+        sh 'mvn clean:package'
       }
     }
     stage('test') {
@@ -14,6 +15,11 @@ pipeline {
     stage('publish') {
       steps {
         echo publish
+      }
+    }
+    stage('archive') {
+      steps {
+        echo 'Archive'
       }
     }
   }
